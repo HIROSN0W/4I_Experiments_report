@@ -177,8 +177,25 @@ endmodule
 | 1 | 1 | 0 | 1| 0| 0| 1| 0| 合|
 | 0 | 0 | 0 | 0| 0| 0| 0| 0| 合|  
 
-
 ### 演習５  
+
+```Verilog HDL
+    module adder4(
+        input[3:0] A,
+        input[3:0] B,
+        output[3:0] S,
+        input C_I,
+        output C_O
+        );
+        wire[3:1] C;
+        fulladd fa3(.A(A[3]), .B(B[3]), .C_I(C[3]), .C_O(C_O), .S(S[3]));
+        fulladd fa2(.A(A[2]), .B(B[2]), .C_I(C[2]), .C_O(C_3), .S(S[2]));
+        fulladd fa1(.A(A[1]), .B(B[1]), .C_I(C[1]), .C_O(C_2), .S(S[1]));
+        fulladd fa0(.A(A[0]), .B(B[0]), .C_I(C_I), .C_O(C_1), .S(S[0]));
+    endmodule
+```
+
+### 演習６  
 
 > FPGAのピン番号を調べ、ピン配置を行いなさい。
 
@@ -194,7 +211,7 @@ endmodule
 | B[0] | SW5 | V15| | | |  
 
 
-### 演習６  
+### 演習７  
 > テストパターンを作成せよ。
 
 | 代表パターン | | | 出力 | モジュールの接続 | | | 出力 |
